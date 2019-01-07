@@ -47,7 +47,7 @@ a:focus {
   font: 1rem "Helvetica", "Arial", "sans-serif";
 }
 
-#result {
+#checkedResult {
   color: blue;
 }
 

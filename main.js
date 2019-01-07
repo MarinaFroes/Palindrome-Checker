@@ -8,79 +8,48 @@ const palindrome = () => {
 //Turn input into an array and into lowercase
   const inputArray = input.toLowerCase().split('');
 
-//Remove all non-alphanumeric characters (punctuation, spaces and symbols) of inputArray
-const toRemoveNonAlphanum = (array1, array2) => {
-  let finalArray = [];
-  for (let i = 0; i < array1.length; i++ ){
-    for (let j = 0; j < array2.length; j++){
-      if (array1[i] === array2[j]){
-        finalArray.push(array1[i]);
+//Remove all non-alphanumeric characters (punctuation, spaces and symbols)
+  const getAlphanum = (array1, array2) => {
+    let newArray = [];
+    for (let i = 0; i < array1.length; i++ ){
+      for (let j = 0; j < array2.length; j++){
+        if (array1[i] === array2[j]){
+          newArray.push(array1[i]);
+        };
       };
     };
+    return newArray;
   };
-  return finalArray;
-};
 
-toRemoveNonAlphanum(inputArray, alphaNum);
+  const finalArray = getAlphanum(inputArray, alphaNum);
 
-//Reverse Array
-const getReverseArray = (arr) => {
-  const reverseArray = arr.reverse();
-  return reverseArray;
-};
+//Get reverse Array - copying the array first, because .reserve() is destructive
+  const getReverseArray = (arr) => {
+    let copyArr = [];
+    arr.every(item => copyArr.push(item));
+    const newArray = copyArr.reverse();
+    return newArray;
+  };
 
-const reverseArray = getReverseArray(finalArray);
+  const reverseArray = getReverseArray(finalArray);
 
 //Compare finalArray and reverseArray
-const compareArrays = (array1, array2) => {
-
-  for (let i = 0; i < array1.length; i++ ){
-    if (array1[i] === array2[i]){
-
-    } else {
-
+  const compareArrays = (array1, array2) => {
+    for (let i = 0; i < array1.length; i++ ){
+      if (array1[i] !== array2[i]){
+        return false;
+      };
     };
+    return true;
   };
+
+  let checkedResult = document.getElementById("checkedResult");
+  let result = compareArrays(finalArray, reverseArray);
+
+  if(result) {
+    checkedResult.innerHTML = "Yep! Definitely a palindrome!";
+  } else {
+    checkedResult.innerHTML = "Nope! No palindrome!";
+  }
+
 };
-
-  let result = document.getElementById("result");
-  result.innerHTML = "É UM PALÍNDROMO";
-};
-
-
-// const palindrome = () => {
-//   let str = document.getElementById("sequenceToCheck").value;
-//
-//   const arrAlphaNum = ('abcdefghijklmnopqrstuvwxyz0123456789').split('');
-//
-//   const myArr = str.toLowerCase().split('');
-//
-//   const commonArray = [];
-//
-//
-//   for (let i = 0; i < myArr.length; i++ ){
-//     for (let j = 0; j < arrAlphaNum.length; j++){
-//       if (myArr[i] === arrAlphaNum[j]){
-//         commonArray.push(myArr[i]);
-//       };
-//     };
-//   };
-//
-//   let copyOfCommonArray = [];
-//   commonArray.every(item => copyOfCommonArray.push(item));
-//
-//   const reverseArray = commonArray.reverse();
-//
-//   let result = document.getElementById("result");
-//
-//   for (let i = 0; i < commonArray.length; i++ ){
-//     if (copyOfCommonArray[i] === reverseArray[i]){
-//
-//     } else {
-//       return false;
-//     };
-//   };
-//
-//
-//   result.innerHTML = "É UM PALÍNDROMO";
-// };
