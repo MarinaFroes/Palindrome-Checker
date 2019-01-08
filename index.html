@@ -7,8 +7,7 @@
     <meta name="description" content="This palindrome checker aims to
     provide a tool to check if a word, number, phrase, or sequence
     reads the same backwards as forwards.">
-    <link rel="icon"
-    sizes="144x144" href="favicon.png">
+    <link rel="icon" sizes="144x144" href="favicon.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Palindrome Checker</title>
   </head>
@@ -21,14 +20,15 @@
 
     <main>
 
-      <h2>Do you want to check if something is a palindrome? Type it here:</h2>
+      <h2>Do you want to check if something is a palindrome?</h2>
 
-        <textarea id="sequenceToCheck" rows="7" cols="50" placeholder="Palindrome checker: type your word, number, phrase, or other sequence of characters here."></textarea>
+      <div id="inputArea">
+        <label for="textarea">Type your word, number, phrase, or other sequence of characters here:</label>
+        <textarea id="textarea" name="textarea" rows="5" cols="30" minlength="2" required placeholder="A man, a plan, a canal, Panama!" ></textarea>
         <input type="submit" value="Check" id="button" onclick="palindrome()">
-
-      <div>
-        <h1 id="checkedResult"></h1>
       </div>
+
+      <div id="checkedResult"></div>
 
       <h2 class="definition">What is a palindrome?</h2>
 
