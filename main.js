@@ -2,11 +2,17 @@ const palindrome = () => {
 //Get the user input
   let input = document.getElementById("textarea").value;
   let checkedResult = document.getElementById("checkedResult");
+  const errorMessage = "Ops! There's nothing to check! Try to type something.";
+  const isPalindromeMessage = "Yep! Definitely a palindrome!";
+  const notPalindromeMessage = "Nope! Not a palindrome! Try again";
+  const errorColor = "#900";
+  const defaultBgColor = "#fff";
+  const isPalindromeColor = "#004d99";
 
   if(!input) {
-    checkedResult.innerHTML = "Ops! There's nothing to check! Try to type something.";
-    checkedResult.style.backgroundColor = "#900";
-    throw new Error('No input');
+    checkedResult.innerHTML = errorMessage;
+    checkedResult.style.backgroundColor = errorColor;
+    throw new Error(errorMessage);
   }
 //Array of alphanumerics characters to compare with the input array
   const alphaNum = ('abcdefghijklmnopqrstuvwxyz0123456789').split('');
@@ -53,13 +59,13 @@ const palindrome = () => {
   let result = compareArrays(finalArray, reverseArray);
 
   if(result) {
-    checkedResult.innerHTML = "Yep! Definitely a palindrome!";
-    checkedResult.style.backgroundColor = "#fff";
-    checkedResult.style.color = "#004d99";
+    checkedResult.innerHTML = isPalindromeMessage;
+    checkedResult.style.backgroundColor = defaultBgColor;
+    checkedResult.style.color = isPalindromeColor;
   } else {
-    checkedResult.innerHTML = "Nope! Not a palindrome! Try again";
-    checkedResult.style.backgroundColor = "#fff";
-    checkedResult.style.color = "#900";
+    checkedResult.innerHTML = notPalindromeMessage;
+    checkedResult.style.backgroundColor = defaultBgColor;
+    checkedResult.style.color = errorColor;
   }
 
 };
