@@ -6,12 +6,13 @@ const palindrome = () => {
   const isPalindromeMessage = "Yep! Definitely a palindrome!";
   const notPalindromeMessage = "Nope! Not a palindrome! Try again";
   const errorColor = "#900";
-  const defaultBgColor = "#fff";
+  const defaultWhiteColor = "#fff";
   const isPalindromeColor = "#004d99";
 
   if(!input) {
     checkedResult.innerHTML = errorMessage;
     checkedResult.style.backgroundColor = errorColor;
+    checkedResult.style.color = defaultWhiteColor;
     throw new Error(errorMessage);
   }
 //Array of alphanumerics characters to compare with the input array
@@ -55,17 +56,15 @@ const palindrome = () => {
     return true;
   };
 
-
   let result = compareArrays(finalArray, reverseArray);
 
   if(result) {
     checkedResult.innerHTML = isPalindromeMessage;
-    checkedResult.style.backgroundColor = defaultBgColor;
+    checkedResult.style.backgroundColor = defaultWhiteColor;
     checkedResult.style.color = isPalindromeColor;
   } else {
     checkedResult.innerHTML = notPalindromeMessage;
-    checkedResult.style.backgroundColor = defaultBgColor;
+    checkedResult.style.backgroundColor = defaultWhiteColor;
     checkedResult.style.color = errorColor;
-  }
-
+  };
 };

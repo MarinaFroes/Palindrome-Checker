@@ -1,3 +1,13 @@
+:root {
+  --dark-red: #900;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 main {
   margin: 1rem 2rem;
 }
@@ -9,14 +19,15 @@ main a {
 a:hover,
 a:active,
 a:focus {
-  color: #900;
+  color: darkred;
+  color: var(--dark-red);
   text-decoration: none;
 }
 
 h1 {
   font: 3rem "Helvetica", "Arial", "sans-serif";
-  text-align: center;
   font-weight: bold;
+  padding-left: 1rem;
 }
 
 h2 {
@@ -39,6 +50,12 @@ footer a {
   color: #808080;
 }
 
+span {
+  color: darkred;
+  color: var(--dark-red);
+  font-size: 2.5rem;
+}
+
 #textarea,
 #button {
   display: inline-block;
@@ -59,7 +76,8 @@ footer a {
 }
 
 #button {
-  background-color: #900;
+  background-color: darkred;
+  background-color: var(--dark-red);
   color: #fff;
   border-radius: 8px;
   padding: .50rem;
