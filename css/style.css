@@ -24,7 +24,7 @@ main a {
 a:hover,
 a:active,
 a:focus {
-  color: darkred;
+  color: black;
   color: var(--main-color);
   text-decoration: none;
 }
@@ -37,7 +37,6 @@ h1 {
 }
 
 h2 {
-  font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -49,11 +48,10 @@ label {
 
 hr {
   width: 90%;
-
 }
 
 footer p {
-  font-size: .8rem;
+  font-size: .9rem;
   color: grey;
   text-align: center;
 }
@@ -62,14 +60,14 @@ footer a {
   color: #808080;
 }
 
-span {
-  color: darkred;
+.fas {
+  color: black;
   color: var(--main-color);
   font-size: 2.5rem;
 }
 
 #textarea,
-#button {
+.button {
   display: inline-block;
   vertical-align: bottom;
   margin: .7rem .5rem;
@@ -85,18 +83,27 @@ span {
 #checkedResult {
   color: #fff;
   font-size: 1.2rem;
+  display: none;
 }
 
-#button {
-  background-color: darkred;
+.show {
+  display: block;
+}
+
+.button {
+  background-color: black;
   background-color: var(--main-color);
   color: #fff;
   border-radius: .25rem;
   border: none;
   padding: .5rem 2rem;
   box-shadow: 0 .5rem 1.5rem rgba(32, 43, 54, 0.12);
-  mix-blend-mode: multiply;
-  transition: box-shadow .15s ease;
+}
+
+.definition {
+  box-shadow: 0 .5rem 1.5rem rgba(32, 43, 54, 0.12);
+  padding: .7rem 1.5rem;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 480px) {
@@ -112,7 +119,7 @@ span {
     text-align: center;
   }
 
-  .fa-check-circle {
+  .fas {
     display: none;
   }
 }
