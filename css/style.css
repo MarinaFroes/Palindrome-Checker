@@ -66,6 +66,12 @@ footer a {
   font-size: 2.5rem;
 }
 
+.far {
+  color: black;
+  color: var(--main-color);
+  font-size: 5rem;
+}
+
 #textarea,
 .button {
   display: inline-block;
@@ -80,10 +86,13 @@ footer a {
   box-shadow: 0 .5rem 1.5rem rgba(32, 43, 54, 0.12);
 }
 
-#checkedResult {
-  color: #fff;
-  font-size: 1.2rem;
+.result {
   display: none;
+  color: #346790;
+  font-size: 1.2rem;
+  box-shadow: 0 .5rem 1.5rem rgba(32, 43, 54, 0.12);
+  text-align: center;
+  padding: 1rem 0rem;
 }
 
 .show {
@@ -98,6 +107,7 @@ footer a {
   border: none;
   padding: .5rem 2rem;
   box-shadow: 0 .5rem 1.5rem rgba(32, 43, 54, 0.12);
+  cursor: pointer;
 }
 
 .definition {

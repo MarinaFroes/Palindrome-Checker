@@ -1,18 +1,10 @@
 const palindrome = () => {
 //Get the user input
   let input = document.getElementById("textarea").value;
-  let checkedResult = document.getElementById("checkedResult");
-  const errorMessage = "Ops! There's nothing to check! Try to type something.";
-  const isPalindromeMessage = "Yep! Definitely a palindrome!";
-  const notPalindromeMessage = "Nope! Not a palindrome! Try again";
-  const errorColor = "#900";
-  const defaultWhiteColor = "#fff";
-  const isPalindromeColor = "#004d99";
-
+  console.log(input);
   if(!input) {
-    checkedResult.innerHTML = errorMessage;
-    checkedResult.style.backgroundColor = errorColor;
-    checkedResult.style.color = defaultWhiteColor;
+    document.getElementById("errorMessage").classList.add("show");
+    console.log("No input");
     throw new Error(errorMessage);
   }
 //Array of alphanumerics characters to compare with the input array
@@ -59,12 +51,24 @@ const palindrome = () => {
   let result = compareArrays(finalArray, reverseArray);
 
   if(result) {
-    checkedResult.innerHTML = isPalindromeMessage;
-    checkedResult.style.backgroundColor = defaultWhiteColor;
-    checkedResult.style.color = isPalindromeColor;
+    document.getElementById("isPalindrome").classList.add("show");
+    console.log("Palindrome");
   } else {
-    checkedResult.innerHTML = notPalindromeMessage;
-    checkedResult.style.backgroundColor = defaultWhiteColor;
-    checkedResult.style.color = errorColor;
+    document.getElementById("notPalindrome").classList.add("show");
+    console.log("Not a Palindrome");
   };
+};
+
+/* If one of the results is showing, hide it */
+const hideResult = () => {
+  if (!event.target.closest("#textarea")) {
+    const results = document.getElementsByClassName("result");
+    let i;
+    for (i = 0; i < results.length; i++) {
+      let itemResult = results[i];
+      if (itemResult.classList.contains('show')) {
+        itemResult.classList.remove('show');
+      }
+    }
+  }
 };
