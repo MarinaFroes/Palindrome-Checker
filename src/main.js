@@ -30,8 +30,7 @@ const palindrome = () => {
 
 //Get reverse Array - copying the array first, because .reserve() is destructive
   const getReverseArray = (arr) => {
-    let copyArr = [];
-    arr.every(item => copyArr.push(item));
+    let copyArr = [...arr]; //Spread operator to copy the original array
     const newArray = copyArr.reverse();
     return newArray;
   };
